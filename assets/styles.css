@@ -64,6 +64,10 @@ footer {
 
 @media (max-width: 768px) {
 
+  body {
+    overflow-x: hidden;
+  }
+  
   footer {
     text-align: center;
   }
@@ -84,6 +88,8 @@ footer {
   .contact-icon {
     margin:1.5rem;
   }
+
+
 }
 
 /* .welcome-text {
