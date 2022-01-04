@@ -4,13 +4,24 @@ body {
 
 .sidebar {
   background-color: #D3D3D3;
-  position: sticky;
-  bottom: 0;
+  width: 25%;
+  height: 100%;
   text-align: center;
 }
 
 .avatar {
-  height: 5rem;
-  width: 5rem;
-  margin-top: 0.5rem;
+  width: 100%;
+  border-radius: 25%;
 }
+
+.internal-btn {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.contact-btn {
+  width:100%;
+}
+/* .welcome-text {
+  padding: 5rem 0 5rem;
+} */
