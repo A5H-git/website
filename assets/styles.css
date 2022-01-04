@@ -2,6 +2,28 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+.link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: inherit;
+}
+
+footer {
+  height: 150%;
+  width:100%;
+}
+
+.welcome-body {
+  padding: 12%;
+}
+
+.icon-link {
+  color: inherit;
+}
+
 .sidebar {
   background-color: #D3D3D3;
   width: 25%;
@@ -10,6 +32,9 @@ body {
 }
 
 .avatar {
+  position: relative;
+  top:auto;
+  height: 100%;
   width: 100%;
   border-radius: 25%;
 }
@@ -22,6 +47,44 @@ body {
 .contact-btn {
   width:100%;
 }
+
+.welcome-content {
+  padding: 25% 0 50% 0;
+}
+
+.contact-icon-bar {
+  text-align: right;
+}
+
+.contact-icon {
+  margin-right: 2rem;
+  font-size: 1.25rem;
+}
+
+.contact-text {
+  font-size: 1.25rem;
+}
+
+
+@media (max-width: 768px) {
+
+  footer {
+    text-align: center;
+  }
+
+  .contact-text {
+    padding-bottom: 1.5rem;
+  }
+
+  .contact-icon-bar {
+    text-align: center;
+  }
+
+  .contact-icon {
+    margin:1.5rem;
+  }
+}
+
 /* .welcome-text {
   padding: 5rem 0 5rem;
 } */
