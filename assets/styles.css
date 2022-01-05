@@ -1,5 +1,6 @@
 body {
   font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
 }
 
 .link {
@@ -13,26 +14,16 @@ body {
 
 footer {
   height: 150%;
-  width:100%;
 }
 
-.welcome-body {
-  padding: 12%;
-}
 
-.icon-link {
-  color: inherit;
-}
-
-.sidebar {
-  background-color: #D3D3D3;
-  width: 25%;
-  height: 100%;
-  text-align: center;
+.welcome-avatar{
+  margin-top: 10%;
+  padding-left: 20%;
 }
 
 .avatar {
-  border-radius: 50%;
+  width: 75%;
 }
 
 .internal-btn {
@@ -40,12 +31,13 @@ footer {
   margin-bottom: 1rem;
 }
 
-.contact-btn {
+/* .contact-btn {
   width:100%;
-}
+} */
 
 .welcome-content {
-  padding: 25% 0 50% 0;
+  margin-top: 10%;
+  padding: 20% 25% 0 0;
 }
 
 .contact-icon-bar {
@@ -63,18 +55,19 @@ footer {
 
 
 @media (max-width: 768px) {
-
-  body {
-    overflow-x: hidden;
+  h1 {
+    text-align: center;
+    padding-bottom: 1.5rem;
   }
-  
+
   footer {
+    position: static;
     text-align: center;
   }
 
   .welcome-content {
-    margin-bottom: auto;
-    padding-top: 0;
+    margin-bottom: 5%;
+    padding: 0 1rem 0 1rem;
   }
 
   .contact-text {
@@ -86,12 +79,11 @@ footer {
   }
 
   .contact-icon {
+    font-size: 1.5rem;
     margin:1.5rem;
   }
 
-
+  .welcome-avatar {
+    padding: 0;
+  }
 }
-
-/* .welcome-text {
-  padding: 5rem 0 5rem;
-} */
