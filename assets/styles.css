@@ -1,10 +1,13 @@
-body {
-  font-family: 'Roboto', sans-serif;
-  flex-grow: 1;
+.body {
+  color: #293242;
 }
 
-.navbar {
-  width: 100%;
+.navbar{
+  font-weight: 500;
+}
+
+.colored-section {
+  background-color: #ECEBE2;
 }
 
 .link {
@@ -15,11 +18,6 @@ body {
 .link:hover {
   color: inherit;
 }
-
-footer {
-  height: 150%;
-}
-
 
 .welcome-avatar{
   margin-top: 10%;
@@ -35,10 +33,6 @@ footer {
   margin-bottom: 1rem;
 }
 
-/* .contact-btn {
-  width:100%;
-} */
-
 .welcome-content {
   margin-top: 10%;
   padding: 20% 25% 0 0;
@@ -53,8 +47,13 @@ footer {
   font-size: 1.25rem;
 }
 
+.contact-icon:hover {
+  color: #916848;
+}
+
 .contact-text {
   font-size: 1.25rem;
+  font-weight: 500;
 }
 
 
@@ -69,7 +68,6 @@ footer {
   }
 
   footer {
-    position: static;
     text-align: center;
   }
 
@@ -94,4 +92,5 @@ footer {
   .welcome-avatar {
     padding: 0;
   }
+
 }
