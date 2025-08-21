@@ -31,8 +31,7 @@ const router = createBrowserRouter([
         path: "projects/",
         element: <ProjectsPage />,
         loader: async () => {
-          const response = await fetch(`${API_ROOT}/projects/`);
-          return response.json();
+          return getProjects({});
         },
       },
       {
