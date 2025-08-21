@@ -9,7 +9,7 @@ import { Outlet } from "react-router-dom";
 function Root() {
   return (
     <div className="page-container">
-      <header className="sticky top-00 z-5 backdrop-blur p-4">
+      <header className="sticky top-00 z-5 p-4">
         <Navbar />
       </header>
       <main>
