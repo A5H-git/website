@@ -1,7 +1,7 @@
 import React from "react";
 
 
-import { Link, useLoaderData, useSearchParams } from "react-router-dom";
+import { useLoaderData, useSearchParams } from "react-router-dom";
 
 import { Project } from "@/types/project";
 import ProjectCard from "../components/ProjectCard/ProjectCard";
@@ -36,14 +36,6 @@ const ProjectsPage = () => {
   const end = start + PAGE_SIZE;
   const pageProjects = projects.slice(start, end);
 
-  const changePage = (page: number) => {
-    const nextPage = clampPage(page, nPages);
-    const params = new URLSearchParams(searchParams);
-    params.set("page", String(nextPage));
-    setSearchParams(params);
-  }
-
-
   return (
     <div className="mx-auto max-w-6xl px-4 py-8">
       <header className="mb-12">
@@ -76,11 +68,15 @@ const ProjectsPage = () => {
             {
               Array.from({length : nPages}, (_, i) => i + 1).map((page) => (
                 <PaginationItem key={page}>
-                  <Link to={`?page=${page}`}>
-                    <PaginationLink isActive={page === currPage}>
-                      {page}
-                    </PaginationLink>
-                  </Link>
+                  <PaginationLink 
+                    isActive={page === currPage} 
+                    href={`?page=${page}`}
+                    onClick={(e) => {
+                      if (page === currPage) e.preventDefault();
+                    }}
+                  >
+                    {page}
+                  </PaginationLink>
                 </PaginationItem>
               ))
             }
