@@ -2,7 +2,7 @@ import "./index.css";
 
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, LoaderFunctionArgs, RouterProvider } from "react-router-dom";
 
 import HomePage from "./routes/HomePage/HomePage";
 import LifePage from "./routes/LifePage";
@@ -11,8 +11,7 @@ import ProjectsPage from "./routes/ProjectsPage";
 import Root from "./routes/Root";
 
 import React from "react";
-import { getProjects } from "./api/projects";
-import { API_ROOT } from "./utils/constants";
+import { getProject, getProjects } from "./api/projects";
 
 // The page where all other elements will render under
 const router = createBrowserRouter([
@@ -38,12 +37,8 @@ const router = createBrowserRouter([
         // Render ProjectDetail when URL matches
         path: "projects/:projectSlug",
         element: <ProjectDetailPage />,
-        loader: async ({ request, params }) => {
-          const response = await fetch(
-            `${API_ROOT}/projects/${params.projectSlug}/`,
-            { signal: request.signal }
-          );
-          return response.json();
+        loader: async ({ params }: LoaderFunctionArgs) => {
+          return getProject(params.projectSlug!);
         },
       },
       {
