@@ -21,7 +21,7 @@ function ProjectCard({ title, summary, previewImage, tags, slug }: ProjectCardPr
           (
             <img
               src={previewImage}
-              className="h-full w-full object-cover rounded-t-lg pointer-events-none select-none"
+              className="h-full w-full object-contain p-2 rounded-t-lg pointer-events-none select-none"
               onError={() => console.error("Image failed:", previewImage)}
             />
           ) : (            
