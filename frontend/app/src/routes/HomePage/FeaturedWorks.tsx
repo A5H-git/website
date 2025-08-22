@@ -13,7 +13,7 @@ function FeaturedWorks({ projects }: FeaturedWorksProps) {
   return (
     <section className="featured-works flex flex-col items-center justify-center">
       <h2 className="mt-6">Featured Works</h2>
-      <div className="flex flex-wrap gap-12 my-12 items-center justify-center">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 px-3">
         {projects
           .slice()
           .reverse()
