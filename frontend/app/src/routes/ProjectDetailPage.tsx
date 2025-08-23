@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 
 import ReactMarkdown from "react-markdown";
@@ -9,7 +9,25 @@ import { MEDIA_ROOT } from "@/utils/constants";
 
 
 const ProjectDetailPage = () => {
+  
   const project = useLoaderData<Project>();
+
+  // Load Body
+  const [projectBody, setContent] = useState("")
+  useEffect(() => {
+      if (project.bodyUrl) {
+        fetch(`${MEDIA_ROOT}${project.bodyUrl}`)
+        .then(response => response.text())
+        .then(setContent)
+        .catch((e) => console.error("Failed to load: ", e));
+      } else {
+        setContent(project.bodyText || "");
+      }
+    }, 
+    [project]
+  );
+
+  // Prepare Image Link
   const previewImage = (
     project.previewImage
       ? `${MEDIA_ROOT}${project.previewImage}`
@@ -25,7 +43,7 @@ const ProjectDetailPage = () => {
       </header>
       <div className="prose dark:prose-invert max-w-none pt-4">
         <ReactMarkdown remarkPlugins={[remarkGfm]}>
-          {project.body}
+          {projectBody}
         </ReactMarkdown>
       </div>
     </div>
