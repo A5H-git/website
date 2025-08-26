@@ -1,7 +1,6 @@
 from django.db import models
 
-from backend.settings import MEDIA_ROOT
-
+from taggit.managers import TaggableManager
 
 class Project(models.Model):
     title = models.CharField(max_length=200)
@@ -15,6 +14,8 @@ class Project(models.Model):
     preview_image = models.ImageField(
         upload_to="project_previews", blank=True, null=True
     )
+
+    tags = TaggableManager()
 
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateField(auto_now_add=True)

@@ -22,7 +22,7 @@ function Navbar() {
       </Link>
 
       {/* Navigation */}
-      <nav className="flex flex-3  justify-end items-center">
+      <nav className="flex flex-3 justify-end items-center gap-3">
         <div className="flex gap-6">
           <Link to="/projects" className="hover:text-accent">
             Projects
@@ -35,11 +35,11 @@ function Navbar() {
           </Link>
         </div>
 
-        <div className="flex px-3">
-          <ButtonIcon link={GITHUB_URL} ariaLabel="GitHub Profile">
+        <div className="flex gap-1">
+          <ButtonIcon link={GITHUB_URL} ariaLabel="GitHub Profile" variant="ghost">
             <GitHubIcon />
           </ButtonIcon>
-          <ButtonIcon link={LINKEDIN_URL} ariaLabel="LinkedIn Profile">
+          <ButtonIcon link={LINKEDIN_URL} ariaLabel="LinkedIn Profile" variant="ghost">
             <LinkedInIcon />
           </ButtonIcon>
         </div>

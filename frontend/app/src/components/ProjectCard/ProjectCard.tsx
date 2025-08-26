@@ -1,9 +1,12 @@
 import React from "react";
 
 import { Button } from "@/components/ui/button";
-import { Card, CardDescription, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardDescription, CardTitle, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-
+import { GitHubIcon } from "@/assets/icons";
+import { GITHUB_URL } from "@/utils/constants";
+import { ButtonIcon } from "../ButtonIcon";
 
 type ProjectCardProps = {
   title: string;
@@ -15,7 +18,7 @@ type ProjectCardProps = {
 
 function ProjectCard({ title, summary, previewImage, tags, slug }: ProjectCardProps) {
   return (
-    <Card className="space-y-3">
+    <Card className="overflow-hidden group hover:shadow-lg transition-shadow">
       <div className="flex justify-center items-center h-[400px]">
         {previewImage ? 
           (
@@ -30,20 +33,35 @@ function ProjectCard({ title, summary, previewImage, tags, slug }: ProjectCardPr
             </div>
           )
         }
-      </div>
-
-      <div className="py-[1rem] px-[1rem] space-y-3 h-full">
-        <CardTitle>{title}</CardTitle>
+    </div>
+  
+      <CardHeader className="gap-y-2">
+        <CardTitle>
+          {title}
+        </CardTitle>
         <CardDescription className="h-[12rem] overflow-hidden">
           {summary}
         </CardDescription>
-
-        <div className="flex justify-end">
+      </CardHeader>
+      
+      <CardContent className="flex flex-wrap gap-2 justify-end">
+        {tags?.map((tag, tagIndex) =>(
+          <Badge key={tagIndex} variant="primary" className="text-xs">
+            {tag}
+          </Badge>
+          ))}
+      </CardContent>
+      
+      <CardFooter className="justify-end">
+        <div className="flex gap-2">
+          <ButtonIcon link={GITHUB_URL} ariaLabel="GitHub Profile">
+            <GitHubIcon />
+          </ButtonIcon>
           <Link to={slug}>
             <Button>Learn More</Button>
           </Link>
         </div>
-      </div>
+      </CardFooter>
     </Card>
   );
 }
