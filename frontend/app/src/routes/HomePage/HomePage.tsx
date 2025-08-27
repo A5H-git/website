@@ -2,7 +2,6 @@ import React from "react";
 
 import { useLoaderData } from "react-router-dom";
 
-import AboutMe from "./AboutMe";
 import Contact from "./Contact";
 import FeaturedWorks from "./FeaturedWorks";
 import Hero from "./Hero";
@@ -15,7 +14,7 @@ const HomePage = () => {
   return (
     <div className="landing-page">
       <Hero />
-      <AboutMe />
+      {/* <AboutMe /> */}
       <FeaturedWorks projects={featuredProjects} />
       <Contact />
     </div>
