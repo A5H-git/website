@@ -11,15 +11,20 @@ export type FeaturedWorksProps = {
 function FeaturedWorks({ projects }: FeaturedWorksProps) {
   
   return (
-    <section className="featured-works flex flex-col items-center justify-center">
-      <h2 className="mt-6">Featured Works</h2>
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 px-4">
+    <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
+      <div className="flex justify-center pb-12">
+        <h1 className="sm:text-6xl font-bold block">
+          Featured Works
+        </h1>
+      </div>
+      
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 px-4 items-stretch">
         {projects
           .slice()
           .reverse()
           .map((project: Project) => {
             return (
-              <div key={project.id} className="w-full h-full max-w-[32rem]">
+              <div key={project.id} className="h-full">
                 <ProjectCard
                   title={project.title}
                   summary={project.summary}   

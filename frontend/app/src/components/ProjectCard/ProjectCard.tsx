@@ -18,7 +18,7 @@ type ProjectCardProps = {
 
 function ProjectCard({ title, summary, previewImage, tags, slug }: ProjectCardProps) {
   return (
-    <Card className="overflow-hidden group hover:shadow-lg transition-shadow">
+    <Card className="overflow-hidden group hover:shadow-lg transition-shadow h-full">
       <div className="flex justify-center items-center h-[400px]">
         {previewImage ? 
           (
@@ -39,7 +39,7 @@ function ProjectCard({ title, summary, previewImage, tags, slug }: ProjectCardPr
         <CardTitle>
           {title}
         </CardTitle>
-        <CardDescription className="h-[12rem] overflow-hidden">
+        <CardDescription className="line-clamp-5">
           {summary}
         </CardDescription>
       </CardHeader>
