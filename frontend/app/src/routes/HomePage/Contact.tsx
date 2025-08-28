@@ -4,10 +4,16 @@ import ContactForm from "../../components/ContactForm";
 
 function Contact() {
   return (
-    <section id="contact" className="h-screen flex items-center justify-center px-4 py-8">
-      <div className="h-auto w-full min-w-[32rem] sm:w-1/2 p-6 shadow-lg rounded-lg">
-        <h1 className="mb-6 text-2xl font-bold">Let&apos;s Connect</h1>
-        <ContactForm />
+    <section 
+      id="contact" 
+      className=""
+    >
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20 flex justify-center">
+        <div className="w-full w-3/2 lg:w-1/2 p-6 shadow-lg rounded-lg bg-card">
+          <h1 className="mb-6 text-2xl font-bold">Let&apos;s Connect</h1>
+          <ContactForm />
+        </div>
+
       </div>
     </section>
   );
